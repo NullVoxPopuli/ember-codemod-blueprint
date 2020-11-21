@@ -36,7 +36,7 @@ module.exports = {
     },
     // tests
     {
-      files: ['tests/**/*.ts'],
+      files: ['./tests/**/*.ts'],
       ...ts,
       rules: {
         ...ts.rules,
@@ -57,7 +57,7 @@ module.exports = {
     },
     // tests
     {
-      files: ['tests/**/*.js'],
+      files: ['./tests/**/*.js'],
       ...js,
       rules: {
         ...js.rules,

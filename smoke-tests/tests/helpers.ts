@@ -7,7 +7,7 @@ const os = require('os');
 const pino = require('pino');
 
 const log = pino({ level: process.env.LOG_LEVEL || 'info' });
-const isVerbose= process.env.LOG_LEVEL === 'trace';
+const isVerbose = process.env.LOG_LEVEL === 'trace';
 
 async function generateCodemodBlueprint(name: string, cwd: string) {
   await run('ember', ['generate', 'ember-codemod-blueprint', name], { cwd });
@@ -57,8 +57,8 @@ async function run(command: string, args: unknown[], options: Record<string, unk
 
     options = {
       ...options,
-      env: { FORCE_COLOR: true }
-    }
+      env: { FORCE_COLOR: true },
+    };
   }
 
   let subprocess = execa(command, args, options);
@@ -71,4 +71,11 @@ async function run(command: string, args: unknown[], options: Record<string, unk
   return await subprocess;
 }
 
-module.exports = { log, linkThisPackage, gitRoot, createApp, createTempApp, generateCodemodBlueprint };
+module.exports = {
+  log,
+  linkThisPackage,
+  gitRoot,
+  createApp,
+  createTempApp,
+  generateCodemodBlueprint,
+};

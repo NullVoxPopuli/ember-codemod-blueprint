@@ -18,7 +18,7 @@ module.exports = {
     // Tests
     {
       ...ts,
-      files: ['smoke-tests/*.ts', 'smoke-tests/**/*.ts'],
+      files: ['tests/*.ts', 'tests/**/*.ts'],
       env: {
         browser: false,
         node: true,
@@ -28,6 +28,13 @@ module.exports = {
       extends: [...ts.extends, 'plugin:node/recommended'],
       rules: {
         ...ts.rules,
+
+        // This is node code. Of course we use require
+        '@typescript-eslint/no-var-requires': 'off',
+
+        // This appears buggy.
+        // "execa" is not published... ha
+        'node/no-unpublished-require': 'off',
       },
     },
     // Configs
