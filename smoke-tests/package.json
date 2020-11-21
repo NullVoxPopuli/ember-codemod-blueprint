@@ -2,7 +2,6 @@
   "name": "ember-codemod-blueprint-tests",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "test": "mocha",
     "test:verbose": "LOG_LEVEL=trace yarn test",

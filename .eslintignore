@@ -1,0 +1,7 @@
+blueprints/*/files/
+vendor/
+node_modules/
+dist/
+tmp/
+.vim/
+.git/
