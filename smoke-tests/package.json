@@ -4,10 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:verbose": "LOG_LEVEL=trace yarn test",
+    "test:debug": "node --inspect-brk --inspect=0.0.0.0:9229 node_modules/.bin/mocha"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
+    "@types/execa": "^2.0.0",
     "@types/mocha": "^8.0.4",
     "chai": "^4.2.0",
     "execa": "^4.1.0",
