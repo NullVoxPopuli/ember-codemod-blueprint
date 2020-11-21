@@ -14,6 +14,11 @@ const ts = {
 module.exports = {
   root: true,
   rules: {},
+  settings: {
+    node: {
+      tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts'],
+    },
+  },
   overrides: [
     // Tests
     {

@@ -1,7 +1,5 @@
 'use strict';
 
-// It's possible that all test files are concatted....
-// @ts-ignore
 const { describe, it, beforeEach } = require('mocha');
 const { assert } = require('chai');
 

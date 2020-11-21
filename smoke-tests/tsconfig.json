@@ -3,6 +3,6 @@
     "outDir": "./tmp",
     "rootDir": "./tests"
   },
-  "include": ["tests/**/*"],
+  "include": ["tests/**/*", "tests/*"],
   "exclude": ["node_modules"]
 }
