@@ -18,10 +18,11 @@ module.exports = {
     // Tests
     {
       ...ts,
-      files: ['smoke-tests/**/*.ts'],
+      files: ['smoke-tests/*.ts', 'smoke-tests/**/*.ts'],
       env: {
         browser: false,
         node: true,
+        es6: true,
       },
       plugins: [...ts.plugins, 'node'],
       extends: [...ts.extends, 'plugin:node/recommended'],

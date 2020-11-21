@@ -1,10 +1,9 @@
 'use strict';
 
-// HACK: Somehow this makes it so that
-//       the mocha imports don't re-declare describe, it, etc
-export {};
-
+// It's possible that all test files are concatted....
+// @ts-ignore
 const { describe, it, beforeEach } = require('mocha');
+
 const path = require('path');
 const execa = require('execa');
 const { assert } = require('chai');
