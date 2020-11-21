@@ -75,6 +75,7 @@ module.exports = {
         'index.js',
         'testem.js',
         'blueprints/*/index.js',
+        'lib/**/*.js',
         'config/**/*.js',
         'tests/dummy/config/**/*.js',
       ],

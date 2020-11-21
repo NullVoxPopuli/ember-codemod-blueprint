@@ -1,6 +1,6 @@
 'use strict';
 
-const base = require('./lib/base-blueprint')
+const base = require('./lib/base-blueprint');
 
 function codemodBlueprint(config) {
   return {
@@ -9,9 +9,7 @@ function codemodBlueprint(config) {
   };
 }
 
-
 module.exports = {
   name: require('./package').name,
   codemodBlueprint,
 };
-
