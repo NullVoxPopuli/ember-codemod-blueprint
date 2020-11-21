@@ -1,9 +1,6 @@
 {
   "$_": "https://github.com/mochajs/mocha/issues/3727",
   "$schema": "https://mochajs.org/schemas/rc.json",
-  "extension": ["ts"],
-  "spec": "tests/**/*-test.ts",
-  "require": "ts-node/register",
   "fullTrace": true,
   "recursive": true,
   "timeout": "60000"
