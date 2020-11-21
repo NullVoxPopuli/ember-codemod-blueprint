@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "types:watch": "tsc --noEmit --watch",
+    "types:watch": "tsc --noEmit --skipLibCheck --watch",
     "test": "ts-mocha -p ./tsconfig.json tests/**/*-test.ts",
     "test:watch": "yarn test -w --watch-extensions ts",
     "test:verbose": "LOG_LEVEL=trace yarn test",

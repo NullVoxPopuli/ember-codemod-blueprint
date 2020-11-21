@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "./tmp",
-    "rootDir": "./tests"
+    "rootDir": "./tests",
+    "module": "ESNext",
+    "target": "ESNext",
+    "allowJs": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
   },
   "include": ["tests/**/*", "tests/*"],
   "exclude": ["node_modules"]
