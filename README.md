@@ -25,8 +25,7 @@ module.exports = codemodBlueprint({
 
   // runs after the upstream blueprint is installed
   transformFiles(filesFromUpstream = []) {
-  console.log(filesFromUpstream);
-
+    console.log(filesFromUpstream);
   },
 });
 ```

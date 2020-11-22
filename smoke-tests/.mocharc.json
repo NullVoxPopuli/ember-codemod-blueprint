@@ -1,0 +1,8 @@
+{
+  "$_": "https://github.com/mochajs/mocha/issues/3727",
+  "$schema": "https://mochajs.org/schemas/rc.json",
+  "spec": "tmp/tests/**/*-test.js",
+  "fullTrace": true,
+  "recursive": true,
+  "timeout": "60000"
+}

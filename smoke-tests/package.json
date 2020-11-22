@@ -1,0 +1,43 @@
+{
+  "name": "ember-codemod-blueprint-tests",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build:js": "babel tests --out-dir tmp/tests --extensions \".ts\" --source-maps inline",
+    "types:watch": "tsc --noEmit --skipLibCheck --watch",
+    "test": "yarn build:js && mocha --require ./tests/setup.js --require ./tmp/tests/chai-setup",
+    "test:watch": "yarn test -w --watch-extensions ts",
+    "test:verbose": "LOG_LEVEL=trace yarn test",
+    "test:debug": "yarn build:js && node --inspect-brk --inspect=0.0.0.0:9229 node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.7",
+    "@babel/core": "^7.12.7",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "@types/chai": "^4.2.14",
+    "@types/chai-fs": "^2.0.2",
+    "@types/execa": "^2.0.0",
+    "@types/mocha": "^8.0.4",
+    "@types/pino": "^6.3.4",
+    "@types/uuid": "^8.3.0",
+    "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
+    "core-js": "3",
+    "execa": "^4.1.0",
+    "mocha": "^8.2.1",
+    "pino": "^6.7.0",
+    "pino-pretty": "^4.3.0",
+    "typescript": "^4.1.2",
+    "uuid": "^8.3.1"
+  },
+  "engines": {
+    "node": ">= 12"
+  },
+  "volta": {
+    "node": "14.15.1",
+    "yarn": "1.22.10"
+  }
+}
