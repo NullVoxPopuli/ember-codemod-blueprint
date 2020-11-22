@@ -1,15 +1,14 @@
 'use strict';
 
-// const { describe, it, beforeEach } = require('mocha');
-const { assert } = require('chai');
+// TS Hack. TS thinks that all files are concatenated...
+//   meaning that export / import doesn't matter, but instead
+//   things are re-declared over and over again...
+// eslint-disable-next-line node/no-unsupported-features/es-syntax
 
-const {
-  log,
-  createTempApp,
-  gitRoot,
-  linkThisPackage,
-  generateCodemodBlueprint,
-} = require('../helpers');
+import { describe, it, beforeEach } from 'mocha';
+import { assert } from 'chai';
+
+import { log, createTempApp, gitRoot, linkThisPackage, generateCodemodBlueprint } from '../helpers';
 
 describe('file augmentation', () => {
   let rootDir!: string;

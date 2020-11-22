@@ -1,13 +1,20 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "outDir": "./tmp",
-    "rootDir": "./tests",
+    "baseUrl": ".",
+    "rootDir": "tests",
     "module": "ESNext",
     "target": "ESNext",
-    "allowJs": false,
-    "baseUrl": ".",
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    // babel controls transpilation
+    "noEmit": true,
+    "allowJs": false,
+    // Tells tsc that our files are not all concatted together, and we
+    // are capable of import/export/require ing
+    "isolatedModules": true
   },
   "include": ["tests/**/*", "tests/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "tmp"]
 }

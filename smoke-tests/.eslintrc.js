@@ -40,6 +40,10 @@ module.exports = {
         // This appears buggy.
         // "execa" is not published... ha
         'node/no-unpublished-require': 'off',
+        'node/no-unpublished-import': 'off',
+
+        // Babel allows us to use modules
+        'node/no-unsupported-features/es-syntax': 'off',
       },
     },
     // Configs

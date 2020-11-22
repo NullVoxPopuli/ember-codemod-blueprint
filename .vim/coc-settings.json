@@ -3,6 +3,7 @@
     "Codemod",
     "execa",
     "mktemp",
-    "pino"
+    "pino",
+    "uuidv"
   ]
 }
