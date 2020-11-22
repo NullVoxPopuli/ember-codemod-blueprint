@@ -13,6 +13,7 @@ export const log = pino({ level: process.env.LOG_LEVEL || 'info' });
 const isVerbose = process.env.LOG_LEVEL === 'trace';
 
 export async function generateCodemodBlueprint(name: string, cwd: string) {
+  await run('cat', ['package.json'], { cwd });
   await run('ember', ['generate', 'ember-codemod-blueprint', name], { cwd });
 }
 
@@ -58,7 +59,7 @@ export async function linkThisPackage(rootDir: string, targetDir: string) {
 
 export async function run(command: string, args: unknown[], options: Record<string, unknown>) {
   if (isVerbose) {
-    log.trace(`${command} ${args.join(' ')}`);
+    log.trace(`${command} ${args.join(' ')} @ ${options.cwd}`);
 
     options = {
       ...options,

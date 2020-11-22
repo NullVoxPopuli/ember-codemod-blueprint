@@ -1,10 +1,5 @@
 'use strict';
 
-// TS Hack. TS thinks that all files are concatenated...
-//   meaning that export / import doesn't matter, but instead
-//   things are re-declared over and over again...
-// eslint-disable-next-line node/no-unsupported-features/es-syntax
-
 import { describe, it, beforeEach } from 'mocha';
 import { assert } from 'chai';
 
