@@ -12,9 +12,20 @@ export const log = pino({ level: process.env.LOG_LEVEL || 'info' });
 
 const isVerbose = process.env.LOG_LEVEL === 'trace';
 
-export async function generateCodemodBlueprint(name: string, cwd: string) {
-  await run('cat', ['package.json'], { cwd });
-  await run('ember', ['generate', 'ember-codemod-blueprint', name], { cwd });
+export async function setupApp(name: string) {
+  let rootDir = await gitRoot(process.cwd());
+  let appDir = await createTempApp(name);
+
+  log.debug(`rootDir: ${rootDir}`);
+
+  await linkThisPackage(rootDir, appDir);
+
+  return {
+    appDir,
+    rootDir,
+    ember: (...args: string[]) => run('ember', args, { cwd: appDir }),
+    run: (command: string, ...args: string[]) => run(command, args, { cwd: appDir }),
+  };
 }
 
 export async function createTempApp(name: string) {
