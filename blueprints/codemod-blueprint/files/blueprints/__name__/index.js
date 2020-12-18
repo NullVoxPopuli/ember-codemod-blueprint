@@ -28,7 +28,7 @@ module.exports = codemodBlueprint({
   /**
    * runs after the upstream blueprint is installed
    */
-  transform(options, helpers) {
+  async transform(options, helpers) {
     let { transformTemplate, transformScript } = helpers;
     let { project, args } = options;
     let projectRoot = project.root;
